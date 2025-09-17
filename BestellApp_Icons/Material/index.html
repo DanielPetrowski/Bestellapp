@@ -8,7 +8,7 @@
     
    
 </head>
-<body onload="generateNavbar()">
+<body onload="generateMenuName()">
     <header>
         <img src="" alt="Pizzabild">
         <h1>D.P's Food</h1>
@@ -29,10 +29,16 @@
     </main>
     <aside>
         <h2>Warenkorb</h2>
+        <p id="addOrder"></p>
+         <p><strong>Gesamt: <span id="totalPrice">0.00</span> €</strong></p>
+
+    <button onclick="submitOrder()">Bestellung abschicken</button>
+    <button onclick="clearCart()">Warenkorb leeren</button>
+        
         <!-- anzeige essen und preis per JS -->
     </aside>
     
-<input type="number">
+
     <footer>
         © 2025 D.P's Food - Alle Rechte vorbehalten 
     </footer>

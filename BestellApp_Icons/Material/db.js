@@ -4,7 +4,7 @@ let menu = {
         { name: "Pzza_Funghi", price: 5.23 },
         { name: "Pizza_Texas", price: 4.80 },
         { name: "Pizza_Sushi", price: 5.90 },
-        { name: "Pizza_Rolling Thunder", price: 7.43 },
+        { name: "Pizza_Rolling_Thunder", price: 7.43 },
     ],
     "Burger": [
         { name: "Cheeseburger", price: 2.70 },
@@ -20,7 +20,7 @@ let menu = {
         { name: "Tagliatelle", price: 5.78 },
         { name: "Farfalle", price: 5.12 }
     ],
-    "Deutsche Küche": [
+    "Deutsche_Kuche": [
         { name: "Schnitzel", price: 10.42 },
         { name: "Currywurst", price: 9.76 },
         { name: "Bratkartoffeln_mit_Speck", price: 8.56 },
@@ -37,3 +37,5 @@ let menu = {
     ]
 
 }
+
+let cart = {}
