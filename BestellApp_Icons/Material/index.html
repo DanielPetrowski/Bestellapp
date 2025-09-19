@@ -3,49 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>D.P's Food</title>
+    <link rel="shortcut icon" href="./Favicon/android-chrome-192x192.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    
-   
 </head>
 <body onload="generateMenuName()">
+
     <header>
-        <img src="" alt="Pizzabild">
-        <h1>D.P's Food</h1>
-        <p>Bewertung: <img src="" alt="sternbild" > (4,7)</p>
-        <p>Bestes Essen aus der Region niemals selbst gemacht </p>
-        <p>Lieferkosten: 5,00€ - Mindesbestellwert: 30€</p>
+        <div>
+        <img class="oderlogo" src="./Logo/Logo.png" alt="">
+        <h1> D.P's Food</h1>
+        <div class="imgstart">
+        <img class="mainimg" src="./Logo/pizza.jpg" alt="Pizzabild">
+        <img class="seconimg" src="./Favicon/android-chrome-192x192.png" alt="">
+        </div>
+        
+     
     </header>
+    <article>
+       <p>Bewertung: <span style="color: gold;">★ </span> (4,7)
+        <p>Bestes Essen aus der Region niemals selbst gemacht</p>
+        </article>
 
     <nav id="navbar">
-        <!-- js 
-         Kategorien -> Pizza Pasta Desserts  etc anklickbar um zur pasenden stelle zu kommen -->
+      
     </nav>
 
-    <main>
-        <section id="detailMenu">
-            <!--jsPizza Pasta Desserts anzeige preise hinzufügen warenkorp etc  -->
-        </section>
-    </main>
-    <aside>
-        <h2>Warenkorb</h2>
-        <p id="addOrder"></p>
-         <p><strong>Gesamt: <span id="totalPrice">0.00</span> €</strong></p>
+    <div class="main-layout">
+        <main>
+            <section id="detailMenu">
+              
+            </section>
+        </main>
 
-    <button onclick="submitOrder()">Bestellung abschicken</button>
-    <button onclick="clearCart()">Warenkorb leeren</button>
-        
-        <!-- anzeige essen und preis per JS -->
-    </aside>
+        <aside id="cartContainer">
+            <h2>Warenkorb</h2>
+            <div id="addOrder"></div>
+            <p><strong>Gesamt: <span id="totalPrice">0.00</span> €</strong></p>
+            <button onclick="submitOrder()">Bestellung abschicken</button>
+            <button onclick="clearCart()">Warenkorb leeren</button>
+        </aside>
+    </div>
+
     
+    <button id="mobileCartBtn" onclick="toggleMobileCart()">🛒 Warenkorb (<span id="mobileTotalDisplay">0.00</span> €)</button>
+
+    
+    <div id="mobileCartDialog" onclick="toggleMobileCart()">
+        <div id="mobileCartContent" onclick="event.stopPropagation()">
+            <h2>Warenkorb</h2>
+            <div id="mobileCartItems"></div>
+            <p><strong>Gesamt: <span id="mobileTotalPrice">0.00</span> €</strong></p>
+            <button onclick="submitOrder()">Bestellung abschicken</button>
+            <button onclick="clearCart()">Warenkorb leeren</button>
+        </div>
+    </div>
 
     <footer>
-        © 2025 D.P's Food - Alle Rechte vorbehalten 
+        © 2025 D.P's Food – Alle Rechte vorbehalten
     </footer>
+
     <script src="db.js"></script>
     <script src="script.js"></script>
-   
-    
-    
 </body>
 </html>
