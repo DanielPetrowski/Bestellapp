@@ -18,16 +18,7 @@ function showCategory(categoryKey) { // zeigt Details an zb pizza salami mit pre
 
     for (let i = 0; i < items.length; i++) {
         let item = items[i];
-        let safeName = item.name.replace(/'/g, "\\'");
-        detailMenu.innerHTML += `
-            <p><strong>${item.name}</strong></p> 
-            <p>${item.description}</p>
-            <div>
-            <div class="priceBtn">
-            <p class="price">${item.price.toFixed(2)}€ </p>
-            <p><button onclick="increaseBtn('${safeName}', ${item.price})">+</button></p>
-            </div>
-        `;
+        detailMenu.innerHTML += detailMenu.innerHTML = getMenuItemTemplate(item.name, item.description, item.price);;
     }
 }
 
@@ -44,15 +35,19 @@ function increaseBtn(name, price) { //Für „+“-Buttons im Menü (neuen Artik
     updateCartDisplay();
 }
 
-function adjustQuantity(name, change) { // button im warenkorb (zb +und-) können bedient werden 
-    if (cart[name]) {
-        cart[name].quantity += change;
+function changeCartItem(name, change) { // ändert die Menge eines Artikels im Warenkorb oder entfern ihn abbruch wenn artikel nicht im warenkorb
+    if (!cart[name]) return;
 
+    if (change === 0) {
+        delete cart[name];
+    } else {
+        cart[name].quantity += change;
         if (cart[name].quantity <= 0) {
             delete cart[name];
         }
-        updateCartDisplay();
     }
+
+    updateCartDisplay();
 }
 
 function submitOrder() { // bestell abschick funktion 
@@ -110,16 +105,18 @@ function updateCartDisplay() {
         addOrder.innerHTML += `
             <p>
                 ${name} x ${item.quantity} – ${itemTotal.toFixed(2)} €
-                <button onclick="adjustQuantity('${safeName}', -1)">-</button>
-                <button onclick="adjustQuantity('${safeName}', 1)">+</button>
+                <button onclick="changeCartItem('${safeName}', -1)">-</button>
+                <button onclick="changeCartItem('${safeName}', 1)">+</button>
+                <button onclick="changeCartItem('${safeName}', 0)">🗑️</button>
             </p>
         `;
 
         mobileCartItems.innerHTML += `
             <p>
                 ${name} x ${item.quantity} – ${itemTotal.toFixed(2)} €
-                <button onclick="adjustQuantity('${safeName}', -1)">-</button>
-                <button onclick="adjustQuantity('${safeName}', 1)">+</button>
+                <button onclick="changeCartItem('${safeName}', -1)">-</button>
+                <button onclick="changeCartItem('${safeName}', 1)">+</button>
+                <button onclick="changeCartItem('${safeName}', 0)">🗑️</button>
             </p>
         `;
     }

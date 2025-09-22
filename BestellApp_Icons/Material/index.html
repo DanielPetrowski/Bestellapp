@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,33 @@
     <link rel="shortcut icon" href="./Favicon/android-chrome-192x192.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body onload="generateMenuName()">
 
     <header>
         <div>
-        <img class="oderlogo" src="./Logo/Logo.png" alt="">
-        <h1> D.P's Food</h1>
-        <div class="imgstart">
-        <img class="mainimg" src="./Logo/pizza.jpg" alt="Pizzabild">
-        <img class="seconimg" src="./Favicon/android-chrome-192x192.png" alt="">
-        </div>
-        
-     
+            <img class="oderlogo" src="./Logo/Logo.png" alt="">
+            <h1> D.P's Food</h1>
+            <div class="imgstart">
+                <img class="mainimg" src="./Logo/pizza.jpg" alt="Pizzabild">
+                <img class="seconimg" src="./Favicon/android-chrome-192x192.png" alt="">
+            </div>
+
+
     </header>
     <article>
-       <p>Bewertung: <span style="color: gold;">★ </span> (4,7)
+        <p>Bewertung: <span style="color: gold;">★ </span> (4,7)
         <p>Bestes Essen aus der Region niemals selbst gemacht</p>
-        </article>
+    </article>
 
     <nav id="navbar">
-      
+
     </nav>
 
     <div class="main-layout">
         <main>
             <section id="detailMenu">
-              
+
             </section>
         </main>
 
@@ -45,10 +47,11 @@
         </aside>
     </div>
 
-    
-    <button id="mobileCartBtn" onclick="toggleMobileCart()">🛒 Warenkorb (<span id="mobileTotalDisplay">0.00</span> €)</button>
 
-    
+    <button id="mobileCartBtn" onclick="toggleMobileCart()">🛒 Warenkorb (<span id="mobileTotalDisplay">0.00</span>
+        €)</button>
+
+
     <div id="mobileCartDialog" onclick="toggleMobileCart()">
         <div id="mobileCartContent" onclick="event.stopPropagation()">
             <h2>Warenkorb</h2>
@@ -64,6 +67,8 @@
     </footer>
 
     <script src="db.js"></script>
+    <script src="template.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
